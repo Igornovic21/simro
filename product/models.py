@@ -12,7 +12,7 @@ class Marque(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     
     def __str__(self) -> str:
-        return self.libelle
+        return self.libelle + " > id > " + str(self.id)
 
 
 class Product(models.Model):

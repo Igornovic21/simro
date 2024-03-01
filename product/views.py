@@ -26,7 +26,7 @@ class ProductViewSet(ViewSet, PaginationHandlerMixin):
             return Response(data, status=status.HTTP_404_NOT_FOUND)
     
     def list(self, request):
-        products = Product.objects.all()
+        products = Product.objects.all().order_by('libelle')
 
         page = self.paginate_queryset(products)
         if page is not None:
