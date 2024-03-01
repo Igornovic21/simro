@@ -23,14 +23,18 @@ Linux ou macos `source venv/bin/activate`
 ## Etape 2: initialisation de la base de données et configuration
 ### Initialier la base de donnees
 Windows
-> python manage.py makemigrations
-> python manage.py migrate
-> python manage.py createsuperuser
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
 
 Linux ou macos
-> python3 manage.py makemigrations
-> python3 manage.py migrate
-> python3 manage.py createsuperuser
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py createsuperuser
+```
 
 ### Configuration et lancement du projet
 Windows `python manage.py runserver`
@@ -40,5 +44,5 @@ Ouvrez la page web du [server admin](http://127.0.0.1:8000/admin/), puis connect
 
 
 ## Etape 3: lancement du projet
-Ouvrez la page web du [server admin](http://127.0.0.1:8000/), commencez à effectuer des tets sur l'api
+Ouvrez la page web du [server api](http://127.0.0.1:8000/), commencez à effectuer des tets sur l'api
 Si vous avez postman installé sur votre ordinateur, vous pouvez importer le fichiers `endpoints.json` et avoir accès aux appels preconfigurés
