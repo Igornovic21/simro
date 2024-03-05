@@ -48,19 +48,19 @@ class ProductViewSet(ViewSet, PaginationHandlerMixin):
             "detail": self.serializer_class(instance).data }, status=status.HTTP_200_OK)
     
     def create(self, request):
-        booking_in = self.serializer_in_class(data=request.data)
+        product_in = self.serializer_in_class(data=request.data)
         
-        if booking_in.is_valid():
-            booking = booking_in.save()
+        if product_in.is_valid():
+            product = product_in.save()
                 
             return Response({
                 "status": True,
-                "message": "Votre produits a bien été enregistr2",
-                "detail": self.serializer_class(booking).data }, status=status.HTTP_200_OK)
+                "message": "Votre produit a bien été enregistré",
+                "detail": self.serializer_class(product).data }, status=status.HTTP_200_OK)
         return Response({
             "status": False,
             "message": "Données entrées invalides",
-            "detail": booking_in.errors }, status=status.HTTP_400_BAD_REQUEST)
+            "detail": product_in.errors }, status=status.HTTP_400_BAD_REQUEST)
 
     def update(self, request, pk=None):
         instance = self.get_object(pk=pk)
@@ -86,4 +86,4 @@ class ProductViewSet(ViewSet, PaginationHandlerMixin):
         instance.delete()
         return Response({
             "status": True,
-            "message": "Votre produit a été supprimée" }, status=status.HTTP_200_OK)
+            "message": "Votre produit a été supprimé" }, status=status.HTTP_200_OK)
